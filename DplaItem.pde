@@ -1,4 +1,4 @@
-// Each result is used to create a DplaItem
+
 class DplaItem {
   float x, y;
   float diameter;
@@ -27,18 +27,18 @@ class DplaItem {
     // Nested JSONObject that contains useful information
     sr = SourceResource();
     
-    // Modify this to determine what is revealed in mouseOver
+    // What is revealed in mouseOver
     displayTxt = getTitle();
   }
 
-  // Return original URL of item
+ 
   public String getItemURL() {
     String shownAt = jsonParent.getString("isShownAt");
     println(shownAt);
     return shownAt;
   }
 
-  // Get inside SourceResource (Where a lot of useful info resides)
+  // main information resides
   public JSONObject SourceResource() {
     JSONObject source = jsonParent.getJSONObject("sourceResource");
     return source;
@@ -83,8 +83,7 @@ class DplaItem {
       ellipse(x,y,15,15);
     }
 
-     //changeX= changeX+.0005;
-     //changeY=changeY+.5;
+    
 
   
         if (((x) > (width+10) || (x ) < (-10)) && ((x + changeX) > (boundxU) || (x + changeX) < (boundxL))) {
@@ -102,4 +101,3 @@ class DplaItem {
       }
 }
 }
-

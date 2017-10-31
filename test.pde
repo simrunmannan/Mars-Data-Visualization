@@ -1,11 +1,3 @@
-/*
- * DPLA Processing API
- * by Yanni Loukissas (for LMC2700 / GATech 2014)
- * Based on code by Wiliam Karavites
- * wkaravites@gmail.com 
- * The MIT License (MIT)
- * Copyright (c) <2013> <William Karavites>
- */
 
 // An Array of Entry objects
 DplaItem[] entries;
@@ -45,18 +37,17 @@ void draw() {
 // 
 void loadData() {
 
-  //Enter a search term here as well as number of pages  
+    
   SearchQuery mySearch = new SearchQuery("Mars", 200);
   
-  // Handle search results here
+ 
   JSONArray JSONresults = mySearch.search();
   entries = new DplaItem[JSONresults.size()];
 
-  // Use search results to fill array of JSONObjects
+ 
   for (int i = 0; i < JSONresults.size (); i++) {
     JSONObject rec = JSONresults.getJSONObject(i);
     DplaItem di = new DplaItem(rec);
     entries[i] = di;
   }
 }
-
